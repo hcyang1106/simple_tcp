@@ -15,9 +15,10 @@ func process(conn net.Conn) {
 		fmt.Printf("server在等待client %s 發送訊息\n", conn.RemoteAddr().String())
 
 		buf := make([]byte, 1024)
+		fmt.Println("blocking...")
 		n, err := conn.Read(buf) // 阻塞
 		if err != nil {
-			fmt.Printf("client退出 err=%v", err)
+			fmt.Printf("client退出 err=%v\n", err)
 			return
 		}
 		// show message
