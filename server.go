@@ -22,7 +22,7 @@ func process(conn net.Conn) {
 			return
 		}
 		// show message
-		fmt.Print(string(buf[:n]))
+		fmt.Println(string(buf[:n]))
 	}
 
 }
