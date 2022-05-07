@@ -29,7 +29,6 @@ func process(conn net.Conn) {
 
 func main() {
 	fmt.Println("server listening....")
-
 	listen, err := net.Listen("tcp", "0.0.0.0:8888")
 	if err != nil {
 		fmt.Println("listen error, err=", err)
