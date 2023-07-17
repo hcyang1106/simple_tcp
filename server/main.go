@@ -7,7 +7,6 @@ import (
 )
 
 func process(conn net.Conn) {
-	//循環接收client的訊息
 	defer conn.Close() // close conn
 
 	for {
@@ -16,7 +15,7 @@ func process(conn net.Conn) {
 
 		buf := make([]byte, 1024)
 		fmt.Println("blocking...")
-		n, err := conn.Read(buf) // 阻塞
+		n, err := conn.Read(buf)
 		if err != nil {
 			fmt.Printf("client退出 err=%v\n", err)
 			return
@@ -38,7 +37,6 @@ func main() {
 
 
 	for {
-		//等待client連接
 		fmt.Println("等待client連接....")
 		conn, err := listen.Accept()
 		if err != nil {
